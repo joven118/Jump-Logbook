@@ -1,0 +1,994 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 18,
+    "identityHash": "57a0f26a28959434d738efed2f46a43e",
+    "entities": [
+      {
+        "tableName": "users",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` TEXT NOT NULL, `name` TEXT NOT NULL, `screenName` TEXT, `licenseNumber` TEXT NOT NULL, `role` TEXT NOT NULL, `baseJumpCount` INTEGER NOT NULL, `weightLoad` REAL, `walletBalance` REAL NOT NULL, `profilePictureUrl` TEXT, `backgroundPictureUrl` TEXT, `birthdate` INTEGER, `nationality` TEXT, `city` TEXT, `province` TEXT, `country` TEXT, `weight` REAL, `weightUnit` TEXT, `gender` TEXT, `mobileNumber` TEXT, `email` TEXT, `emergencyContactName` TEXT, `emergencyContactNumber` TEXT, PRIMARY KEY(`userId`))",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "screenName",
+            "columnName": "screenName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "licenseNumber",
+            "columnName": "licenseNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "role",
+            "columnName": "role",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "baseJumpCount",
+            "columnName": "baseJumpCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weightLoad",
+            "columnName": "weightLoad",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "walletBalance",
+            "columnName": "walletBalance",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profilePictureUrl",
+            "columnName": "profilePictureUrl",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "backgroundPictureUrl",
+            "columnName": "backgroundPictureUrl",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "birthdate",
+            "columnName": "birthdate",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "nationality",
+            "columnName": "nationality",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "city",
+            "columnName": "city",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "province",
+            "columnName": "province",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "weightUnit",
+            "columnName": "weightUnit",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "gender",
+            "columnName": "gender",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "mobileNumber",
+            "columnName": "mobileNumber",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "emergencyContactName",
+            "columnName": "emergencyContactName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "emergencyContactNumber",
+            "columnName": "emergencyContactNumber",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId"
+          ]
+        }
+      },
+      {
+        "tableName": "jump_logs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`jumpId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` TEXT NOT NULL, `jumpNumber` INTEGER NOT NULL, `date` INTEGER NOT NULL, `dzId` TEXT, `dzName` TEXT NOT NULL, `dzLocation` TEXT NOT NULL, `country` TEXT NOT NULL, `location` TEXT NOT NULL, `aircraft` TEXT NOT NULL, `aircraftType` TEXT NOT NULL, `aircraftTailNumber` TEXT, `exitAltitudeAgl` INTEGER NOT NULL, `deploymentAltitudeAgl` INTEGER NOT NULL, `freefallTimeSeconds` INTEGER NOT NULL, `maxSpeedMph` INTEGER NOT NULL, `averageSpeedMph` INTEGER NOT NULL, `canopyTimeSeconds` INTEGER NOT NULL, `jumpType` TEXT NOT NULL, `disciplines` TEXT NOT NULL, `landingStyles` TEXT NOT NULL, `weatherCondition` TEXT NOT NULL, `gearId` TEXT, `mainCanopyId` TEXT, `reserveCanopyId` TEXT, `containerId` TEXT, `helmetId` TEXT, `altimeterId` TEXT, `partsId` TEXT, `photoUrls` TEXT NOT NULL, `videoUrls` TEXT NOT NULL, `isVerified` INTEGER NOT NULL, `verifierName` TEXT, `verifierLicense` TEXT, `verificationMethod` TEXT, `electronicSignature` TEXT, `teammates` TEXT NOT NULL, `coach` TEXT NOT NULL, `instructor` TEXT NOT NULL, `organizer` TEXT NOT NULL, `jumpNotes` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "jumpId",
+            "columnName": "jumpId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jumpNumber",
+            "columnName": "jumpNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dzId",
+            "columnName": "dzId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "dzName",
+            "columnName": "dzName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dzLocation",
+            "columnName": "dzLocation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "location",
+            "columnName": "location",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aircraft",
+            "columnName": "aircraft",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aircraftType",
+            "columnName": "aircraftType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aircraftTailNumber",
+            "columnName": "aircraftTailNumber",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "exitAltitudeAgl",
+            "columnName": "exitAltitudeAgl",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deploymentAltitudeAgl",
+            "columnName": "deploymentAltitudeAgl",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "freefallTimeSeconds",
+            "columnName": "freefallTimeSeconds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxSpeedMph",
+            "columnName": "maxSpeedMph",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "averageSpeedMph",
+            "columnName": "averageSpeedMph",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "canopyTimeSeconds",
+            "columnName": "canopyTimeSeconds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jumpType",
+            "columnName": "jumpType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "disciplines",
+            "columnName": "disciplines",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "landingStyles",
+            "columnName": "landingStyles",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weatherCondition",
+            "columnName": "weatherCondition",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gearId",
+            "columnName": "gearId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "mainCanopyId",
+            "columnName": "mainCanopyId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "reserveCanopyId",
+            "columnName": "reserveCanopyId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "containerId",
+            "columnName": "containerId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "helmetId",
+            "columnName": "helmetId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "altimeterId",
+            "columnName": "altimeterId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "partsId",
+            "columnName": "partsId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "photoUrls",
+            "columnName": "photoUrls",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "videoUrls",
+            "columnName": "videoUrls",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isVerified",
+            "columnName": "isVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verifierName",
+            "columnName": "verifierName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "verifierLicense",
+            "columnName": "verifierLicense",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "verificationMethod",
+            "columnName": "verificationMethod",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "electronicSignature",
+            "columnName": "electronicSignature",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "teammates",
+            "columnName": "teammates",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coach",
+            "columnName": "coach",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "instructor",
+            "columnName": "instructor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "organizer",
+            "columnName": "organizer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jumpNotes",
+            "columnName": "jumpNotes",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "jumpId"
+          ]
+        }
+      },
+      {
+        "tableName": "aircrafts",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`aircraftId` TEXT NOT NULL, `tailNumber` TEXT NOT NULL, `model` TEXT NOT NULL, `maxCapacity` INTEGER NOT NULL, PRIMARY KEY(`aircraftId`))",
+        "fields": [
+          {
+            "fieldPath": "aircraftId",
+            "columnName": "aircraftId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tailNumber",
+            "columnName": "tailNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "model",
+            "columnName": "model",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxCapacity",
+            "columnName": "maxCapacity",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "aircraftId"
+          ]
+        }
+      },
+      {
+        "tableName": "ledger",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`transactionId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` TEXT NOT NULL, `category` TEXT NOT NULL, `amount` REAL NOT NULL, `timestamp` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "transactionId",
+            "columnName": "transactionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "transactionId"
+          ]
+        }
+      },
+      {
+        "tableName": "badges",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `categoryName` TEXT NOT NULL, `badgeName` TEXT NOT NULL, `iconUrl` TEXT NOT NULL, `description` TEXT NOT NULL, `criteriaType` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoryName",
+            "columnName": "categoryName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "badgeName",
+            "columnName": "badgeName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iconUrl",
+            "columnName": "iconUrl",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "criteriaType",
+            "columnName": "criteriaType",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "user_badges",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` TEXT NOT NULL, `badgeId` TEXT NOT NULL, `dateEarned` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "badgeId",
+            "columnName": "badgeId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateEarned",
+            "columnName": "dateEarned",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "dropzones",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `dzName` TEXT NOT NULL, `location` TEXT NOT NULL, `facilities` TEXT NOT NULL, `aircraftFleet` TEXT NOT NULL, `businessHour` TEXT NOT NULL, `website` TEXT NOT NULL, `contactNumbers` TEXT NOT NULL, `emailAddress` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dzName",
+            "columnName": "dzName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "location",
+            "columnName": "location",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "facilities",
+            "columnName": "facilities",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aircraftFleet",
+            "columnName": "aircraftFleet",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "businessHour",
+            "columnName": "businessHour",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "website",
+            "columnName": "website",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contactNumbers",
+            "columnName": "contactNumbers",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emailAddress",
+            "columnName": "emailAddress",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "events",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `dzId` TEXT NOT NULL, `title` TEXT NOT NULL, `date` INTEGER NOT NULL, `description` TEXT NOT NULL, `registrationFee` REAL NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dzId",
+            "columnName": "dzId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "registrationFee",
+            "columnName": "registrationFee",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "user_gear",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`gearId` TEXT NOT NULL, `userId` TEXT NOT NULL, `category` TEXT NOT NULL, `make` TEXT NOT NULL, `model` TEXT NOT NULL, `sizeSqFt` TEXT NOT NULL, `sizeMlw` TEXT NOT NULL, `serialNumber` TEXT NOT NULL, `dateOfManufacture` TEXT NOT NULL, `isPrimary` INTEGER NOT NULL, PRIMARY KEY(`gearId`))",
+        "fields": [
+          {
+            "fieldPath": "gearId",
+            "columnName": "gearId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "make",
+            "columnName": "make",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "model",
+            "columnName": "model",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sizeSqFt",
+            "columnName": "sizeSqFt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sizeMlw",
+            "columnName": "sizeMlw",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "serialNumber",
+            "columnName": "serialNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateOfManufacture",
+            "columnName": "dateOfManufacture",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPrimary",
+            "columnName": "isPrimary",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "gearId"
+          ]
+        }
+      },
+      {
+        "tableName": "user_privacy_settings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` TEXT NOT NULL, `namePrivacy` TEXT NOT NULL, `screenNamePrivacy` TEXT NOT NULL, `licensePrivacy` TEXT NOT NULL, `birthdatePrivacy` TEXT NOT NULL, `genderPrivacy` TEXT NOT NULL, `nationalityPrivacy` TEXT NOT NULL, `cityPrivacy` TEXT NOT NULL, `provincePrivacy` TEXT NOT NULL, `countryPrivacy` TEXT NOT NULL, `weightLoadPrivacy` TEXT NOT NULL, `mobilePrivacy` TEXT NOT NULL, `emailPrivacy` TEXT NOT NULL, `emergencyContactNamePrivacy` TEXT NOT NULL, `emergencyContactNumberPrivacy` TEXT NOT NULL, `gearPrivacy` TEXT NOT NULL, `statisticsPrivacy` TEXT NOT NULL, PRIMARY KEY(`userId`))",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "namePrivacy",
+            "columnName": "namePrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "screenNamePrivacy",
+            "columnName": "screenNamePrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "licensePrivacy",
+            "columnName": "licensePrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "birthdatePrivacy",
+            "columnName": "birthdatePrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "genderPrivacy",
+            "columnName": "genderPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nationalityPrivacy",
+            "columnName": "nationalityPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cityPrivacy",
+            "columnName": "cityPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "provincePrivacy",
+            "columnName": "provincePrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countryPrivacy",
+            "columnName": "countryPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weightLoadPrivacy",
+            "columnName": "weightLoadPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mobilePrivacy",
+            "columnName": "mobilePrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emailPrivacy",
+            "columnName": "emailPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emergencyContactNamePrivacy",
+            "columnName": "emergencyContactNamePrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emergencyContactNumberPrivacy",
+            "columnName": "emergencyContactNumberPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gearPrivacy",
+            "columnName": "gearPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "statisticsPrivacy",
+            "columnName": "statisticsPrivacy",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId"
+          ]
+        }
+      },
+      {
+        "tableName": "gear_listings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `sellerId` TEXT NOT NULL, `title` TEXT NOT NULL, `category` TEXT NOT NULL, `condition` TEXT NOT NULL, `price` REAL NOT NULL, `description` TEXT NOT NULL, `datePosted` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sellerId",
+            "columnName": "sellerId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "condition",
+            "columnName": "condition",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "datePosted",
+            "columnName": "datePosted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "user_ratings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` TEXT NOT NULL, `ratingName` TEXT NOT NULL, `isVerified` INTEGER NOT NULL, `verifierName` TEXT, `verifierLicense` TEXT, `verificationDate` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ratingName",
+            "columnName": "ratingName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isVerified",
+            "columnName": "isVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verifierName",
+            "columnName": "verifierName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "verifierLicense",
+            "columnName": "verifierLicense",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "verificationDate",
+            "columnName": "verificationDate",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "user_federations",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` TEXT NOT NULL, `federationName` TEXT NOT NULL, `membershipNumber` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "federationName",
+            "columnName": "federationName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "membershipNumber",
+            "columnName": "membershipNumber",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '57a0f26a28959434d738efed2f46a43e')"
+    ]
+  }
+}

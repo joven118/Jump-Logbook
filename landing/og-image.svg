@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="sky" cx="20%" cy="20%" r="70%">
+      <stop offset="0" stop-color="#8ed7e8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#0b1720" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="flare" cx="80%" cy="15%" r="60%">
+      <stop offset="0" stop-color="#ff7a2f" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#0b1720" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#071117"/>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <rect width="1200" height="630" fill="url(#flare)"/>
+  <rect x="82" y="84" width="92" height="92" rx="28" fill="#ff7a2f"/>
+  <text x="108" y="143" fill="#071117" font-family="Trebuchet MS, Verdana, sans-serif" font-size="36" font-weight="800">JL</text>
+  <text x="82" y="290" fill="#f4efe4" font-family="Georgia, serif" font-size="92" font-weight="700">Jump Logbook</text>
+  <text x="86" y="370" fill="#f4efe4" opacity=".76" font-family="Trebuchet MS, Verdana, sans-serif" font-size="34">Digital skydiving records for jumpers and dropzones.</text>
+  <text x="86" y="515" fill="#8ed7e8" font-family="Trebuchet MS, Verdana, sans-serif" font-size="28" font-weight="800">jumplogbook.com</text>
+</svg>

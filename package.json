@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "landing:dev": "wrangler pages dev landing",
+    "landing:deploy": "wrangler pages deploy landing --project-name jumplogbook --force",
+    "dashboard:dev": "vite dashboard --host 0.0.0.0",
+    "dashboard:build": "vite build dashboard",
+    "dashboard:preview": "vite preview dashboard --host 0.0.0.0",
+    "dashboard:deploy": "npm run dashboard:build && wrangler pages deploy dashboard/dist --project-name jumplogbook-app --force"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.108.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0",
+    "wrangler": "^4.24.4"
+  }
+}
